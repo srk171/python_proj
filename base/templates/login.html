@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easybuy/login page</title>
+    {% load static %}
+    <LINK rel="ICON" href="{% static 'img/Game On.png' %}">
+
+    <!--Bootstrap link and script file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("{% static 'img/bg2.avif' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        form {
+            width: 95%;
+            background-color:wheat;
+            border-radius: 15px;
+            margin-top: 100px
+            
+        }
+        
+
+        .btn-primary {
+            width: 50%;
+            border: none;
+            border-radius: 50px;
+            margin-left: 23%;
+        }
+
+        .form-control {
+            color: black;
+            background-color: wheat;
+            border-bottom-color: black;
+            box-shadow: none !important;
+            border: none;
+            border-bottom: 1px solid;
+            border-radius: 4px 4px 0 0;
+            width: 90%;
+            margin-left: 10px;
+        }
+
+        
+
+        .form-label {
+            font-weight: 700;
+            padding-left: 10px;
+        }
+
+        .img {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            margin-left: 38%;
+        }
+        .form-text{
+            margin-left: 10px;
+        }
+        @media screen and (min-width:768px)  {
+            form{
+                width: 40%;
+                padding: 20px;
+
+            }
+            .img{
+                border-radius: 70%;
+                width: 60px;
+                height: 60px;
+                margin-left: 40%;
+            }
+            .form-text{
+                padding: 0px;
+            }
+            
+        }
+        @media screen and (min-width:1024px) {
+            form{
+                width: 30%;
+            }
+            .img{
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+                margin-left: 37%;
+            }
+            
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid  ">
+        <form action="" class="mx-auto" method="POST">
+
+            {% csrf_token %}
+
+
+
+            <img src="{% static 'img/login.jpg' %}" class="img ">
+            <div class="mb-4 mt-5">
+
+                <label for="Username" class="form-label">username</label>
+                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" id="id_username">
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="id_password">
+                <div class="form-text "><a href="#"> forget password?</a></div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary mt-2" onclick="login()">login</button>
+            <div id="emailHelp" class="form-text mx-2 mt-3 p-2">Don't have account/Create a<a
+                    href="{% url 'signuppage'  %}"> Newuser</a></div>
+
+                    <p id="error" style="color: green; text-align: center;"></p>
+
+        </form>
+    </div>
+    <script>
+        function login(){
+            var username = document.getElementById("id_username").value;
+            var password = document.getElementById("id_password").value;
+            
+            if ((username,password)){
+                document.getElementById("error").innerText="login Successful";
+            }
+            else {
+                alert("Invalid username or password");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easybuy/sale</title>
+  {% load static %}
+  <LINK rel="ICON" href="{% static 'img/Game On.png' %}">
+
+  <!--Bootstrap link-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+  <!--Google font link-->
+  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Potta+One&family=Rampart+One&family=Slackey&family=Stick&family=Vast+Shadow&display=swap"
+    rel="stylesheet">
+
+    <style>
+       @media screen and (max-width: 380px){
+        .nav{
+          font-size:8px;
+        }
+
+       }
+       @media screen and (max-width:1400px) {
+
+        
+       }
+
+    </style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+  <!--navbar-->
+
+  <ul class="nav justify-content-center bg-light sticky-top  p-2 ">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="home.html">HOME</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'shoppage' %}">SHOPPING</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">SALE</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">SERVICE</a>
+    </li>
+    {% if user.is_authenticated %}
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'loginpage' %}">LOGIN</a>
+    </li>
+    {% endif %}
+
+  </ul>
+
+
+
+
+
+  <div class="brand ">
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="{% static 'img/Game On.png' %}" alt="" width="20" height="20"
+            class="d-inline-block align-text-bottom rounded-circle ">
+          <b style="font-family: Rampart One, sans-serif; font-size: 20px; color: rgb(223, 104, 230);">Easybuy</b>
+        </a>
+        <form class="d-flex ">
+          <input class="form-control me-1 p-1" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+<!--carousel slide content-->
+    <div class="container p-md-3   ">
+    <div id="mycarousel1" class="carousel slide carousel-fade p-3 " data-bs-ride="carousel">
+
+      <div class="carousel-indicators" style="max-height: 30vh; min-height: 30vh;max-width: calc(100.5vh) ;">
+        <button type="button" data-bs-target="#mycarousel1" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#mycarousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#mycarousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#mycarousel1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#mycarousel1" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="{% static 'img/pic12.webp' %}" class="d-block " alt="first" width="100%" height="650px">
+        </div>
+
+        <div class="carousel-item">
+          <img src="{% static 'img/pic18.jpeg' %}" class="d-block " alt="second" width="100%" height="650px">
+        </div>
+
+        <div class="carousel-item">
+          <img src="{% static 'img/pic15.jpeg' %}" class="d-block" alt="third" width="100%" height="650px">
+        </div>
+
+        <div class="carousel-item">
+          <img src="{% static 'img/pic16.webp' %}" class="d-block" alt="four" width="100%" height="650px">
+        </div>
+
+        <div class="carousel-item">
+          <img src="{% static 'img/pic14.jpeg' %}" class="d-block" alt="five" width="100%" height="650px">
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mycarousel1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mycarousel1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <h1 style="font-family: Potta One, system-ui; font-size: 16px;" class="p-3">
+      <center>Top categories to choose from</center>
+    </h1>
+
+  </div>
+
+<!--card content-->
+  <div class="container p-md-4">
+    <!--row 1-->
+    <div class="row ">
+
+      <div class="col-lg-4 col-sm-4 col-md-6 ">
+        <div class="card_content" style="width: 45vh;">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/a1.avif' %}" class="card-img-top"
+              alt="1">Click</a>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 ">
+        <div class="card_content" style="width: 45vh;;">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/a2.avif' %}" class="card-img-top"
+              alt="2">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6">
+        <div class="card_content" style="width: 45vh;">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/a3.webp' %}" class="card-img-top"
+              alt="3">Click</a>
+        </div>
+      </div>
+    </div>
+    <!--row 2-->
+    <div class="row">
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-3 ">
+        <div class="card" style="width: 45vh;">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/a4.webp' %}" class="card-img-top"
+              alt="4">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/a5.webp' %}" class="card-img-top"
+              alt="5">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh;">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/b2.jpg' %}" class="card-img-top"
+              alt="6">Click</a>
+        </div>
+      </div>
+    </div>
+
+    <!--row3-->
+
+    <div class="row">
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/a7.jpg' %}" class="card-img-top"
+              alt="7">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh;">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/a8.jpg' %}" class="card-img-top"
+              alt="8">Click</a>
+        </div>
+      </div>
+
+
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh;">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/b1.webp' %}" class="card-img-top"
+              alt="9">Click</a>
+        </div>
+      </div>
+    </div>
+
+    <!--row 4-->
+    <div class="row">
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/c3.webp' %}" class="card-img-top"
+              alt="10">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/c1.jpg' %}" class="card-img-top"
+              alt="11">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/c2.avif' %}" class="card-img-top"
+              alt="12">Click</a>
+        </div>
+      </div>
+    </div>
+
+    <!--row 5-->
+    <div class="row">
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/b2.jpg' %}" class="card-img-top"
+              alt="13">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/c4.webp' %}" class="card-img-top"
+              alt="14">Click</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-4 col-md-6 mt-4 pb-3">
+        <div class="card" style="width: 45vh; ">
+          <a href="{% url 'shoppage' %}"><img src="{% static 'bootstrap/css1/d1.webp' %}" class="card-img-top"
+              alt="15">Click</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easybuy/password reset page</title>
+    {% load static %}
+
+    <!--google font link-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background-image: url("{% static 'img/r1.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1 style="font-family: Jaro, sans-serif; font-size: 6px; letter-spacing: 3px;">Forgot your password</h1>
+        <p style="font-size: 20px;">Enter your email address below, and we'll email instructions for setting a new one.
+        </p>
+        <form action="{% url 'password_reset_done' %}" method="POST">
+            {% csrf_token %}
+            <label for="text">Email:</label>
+            <input type="Email">
+            <input type="submit" value="Send me instructions!" style="background-color: green;color: wheat;">
+        </form>
+    </center>
+</body>
+
+</html>
